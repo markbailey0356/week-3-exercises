@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Power Calculator</title>
+  </head>
+  <body>
+    <h1>Power Calculator</h1>
+    <p>This website calculates x to the power of n</p>
+    <label for="x">x: </label>
+    <input type="text" id="x">
+    <label for="n">n: </label>
+    <input type="text" id="n">
+
+    <button id="calculate">Calculate!</button>
+    <p id="result"></p>
+
+    <script>
+      let xElement = document.getElementById("x");
+      let nElement = document.getElementById("n");
+      let calculateElement = document.getElementById("calculate");
+      let resultElement = document.getElementById("result");
+
+      calculateElement.onclick = function() {
+        let x = Number(xElement.value);
+        let n = Number(nElement.value);
+        resultElement.textContent = "";
+        let error = false;
+        if(Number.isNaN(x)) {
+          resultElement.textContent += "Please enter a positive integer (or zero) for x!";
+          error = true;
+        }
+        if (!Number.isInteger(n) || n < 0) {
+          resultElement.textContent += "Please enter a positive integer (or zero) for n!";
+          error = true;
+        }
+        if (!error) {
+          let result = pow(x,n);
+          resultElement.textContent = "x to the power of n is: " + result;
+        }
+      }
+      
+      function pow(x,n) {
+        // my implementation of Math.pow()
+        // only supports n as an integer >= 0
+        let result = 1;
+        for (let i = 0; i < n; i++) {
+          result *= x;
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>

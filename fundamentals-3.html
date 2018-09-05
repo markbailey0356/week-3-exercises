@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Fundamentals Part 3</title>
+  </head>
+  <body>
+    <script>
+      function add7(x) {
+        return x + 7;
+      }
+      function multiply(x,y) {
+        return x * y;
+      }
+      function capitalize(str) {
+        return str.slice(0,1).toUpperCase() + str.slice(1).toLowerCase();
+      }
+      function lastLetter(str) {
+        return str.slice(-1);
+      }
+
+      // or as arrow functions
+      // let add7 = x => x + 7;
+      // let multiply = (x,y) => x*y;
+      // let capitalize = str => str.slice(0,1).toUpperCase() + str.slice(1).toLowerCase();
+      // let lastLetter = str => str.slice(-1);
+
+      console.log("add7(4) = " + add7(4));
+      console.log("multiply(3,4) = " + multiply(3,4));
+      console.log("capitalize('BRUCE') = " + capitalize('BRUCE'));
+      console.log("capitalize('hOmEr') = " + capitalize('hOmEr'));
+      console.log("lastLetter('abcd') = " + lastLetter('abcd'));
+    </script>
+  </body>
+</html>
